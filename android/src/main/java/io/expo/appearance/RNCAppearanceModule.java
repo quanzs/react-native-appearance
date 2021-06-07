@@ -31,7 +31,7 @@ public class RNCAppearanceModule extends ReactContextBaseJavaModule implements L
     public RNCAppearanceModule(@NonNull ReactApplicationContext reactContext) {
         super(reactContext);
         // Only Android 10+ supports dark mode
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
             final ReactApplicationContext ctx = reactContext;
             mBroadcastReceiver = new BroadcastReceiver() {
                 @Override
@@ -55,7 +55,7 @@ public class RNCAppearanceModule extends ReactContextBaseJavaModule implements L
         String colorScheme = "no-preference";
 
         // Only Android 10+ support dark mode
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
             int currentNightMode = config.uiMode & Configuration.UI_MODE_NIGHT_MASK;
             switch (currentNightMode) {
                 case Configuration.UI_MODE_NIGHT_NO:
